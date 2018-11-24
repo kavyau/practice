@@ -1,3 +1,4 @@
+import javafx.util.Pair;
 
 public class Pair_array
 {
@@ -34,6 +35,25 @@ public class Pair_array
         }
         return false;
     }
+    private static void printPairs(int arr[],
+                                   int n, int x)
+    {
+        // int count = 0;
+
+        // Consider all possible pairs
+        // and check their sums
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = i + 1; j < n; j++)
+            {
+                if (arr[i] + arr[j] == x)
+                {
+                    System.out.println("(" + arr[i] +
+                            ", " + arr[j] + ")");
+                }
+            }
+        }
+    }
 
 
     public static void main (String[] args)
@@ -43,8 +63,11 @@ public class Pair_array
         int n = arr.length;
 
         if (pairInSortedRotated(arr, n, sum))
+        {
             System.out.print("Array has two elements" +
                     " with sum 16");
+            printPairs(arr,n,sum);
+        }
         else
             System.out.print("Array doesn't have two" +
                     " elements with sum 16 ");
