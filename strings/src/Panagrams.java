@@ -16,24 +16,28 @@ public class Panagrams
 
     private static String toLowerCase(String s)
     {
-        String temp="";
+        StringBuilder sb= new StringBuilder();
         for(int i=0;i<s.length();i++)
         {
             if(s.charAt(i)>=65 && s.charAt(i)<=90)
             {
-                temp+=(char)(s.charAt(i)-32);
+                int k = s.charAt(i);
+                sb.append((char)(k+32));
+            }
+            else{
+                sb.append((char)(s.charAt(i)));
             }
         }
-        return temp;
+        return sb.toString();
     }
 
     private static String sort(String s)
     {
        String temp="";
        char[] ch=s.toCharArray();
-       for(int i=0;i<s.length()-1;i++)
+       for(int i=0;i<s.length();i++)
        {
-           for(int j=0;j<s.length();j++)
+           for(int j=i;j<s.length();j++)
            {
                if(ch[i]>ch[j])
                {
@@ -43,11 +47,8 @@ public class Panagrams
                }
            }
        }
-       for(int i=0;i<s.length()-1;i++)
-       {
-           temp+=s.charAt(i);
-       }
-       return temp;
+        //System.out.println(String.valueOf(ch));
+       return String.valueOf(ch);
     }
 
     private static String removeDup(String s)
@@ -61,6 +62,7 @@ public class Panagrams
             }
         }
         temp+=s.charAt(s.length()-1);
+        //System.out.println("after removing duplicates: "+temp);
         return temp;
     }
 
@@ -70,9 +72,9 @@ public class Panagrams
         String s="This quick brown fox jumps over the lazy dog";
         Panagrams pan=new Panagrams();
         s=removeSpace(s);
-        toLowerCase(s);
-        sort(s);
-        removeDup(s);
+        s = toLowerCase(s);
+        s = sort(s);
+        s = removeDup(s);
 
         if (s.length()==26)
         {
