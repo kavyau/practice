@@ -12,11 +12,7 @@ public class Combinations
     public static void main (String args[])
     {
         Combinations combo= new Combinations("wxyz");
-        System.out.println("");
-        System.out.println("");
         System.out.println("All possible combinations are :  ");
-        System.out.println("");
-        System.out.println("");
         combo.combine(0);
     }
 
