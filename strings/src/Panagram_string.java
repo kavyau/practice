@@ -29,10 +29,10 @@ public class Panagram_string
         for (int i = 0; i <= 25; i++)
         {
             if (mark[i] == false)
-                return (false);
+                return false;
         }
         // If all characters were present
-        return (true);
+        return true;
     }
 
 
