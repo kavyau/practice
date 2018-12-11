@@ -1,0 +1,8 @@
+1. create a new linked list and add few elements
+2. Add a new node to given linked list at
+    a. beginning of list
+    b. middle of list
+    c. end of list
+4. Delete a node from  given linked list
+5. Find loop in a linked list
+6. Circular linked list - create/add a node/delete a node
