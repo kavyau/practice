@@ -1,5 +1,5 @@
 
-public class LinkedList
+public class Insert
 {
      private static Node head;
     public static class Node
