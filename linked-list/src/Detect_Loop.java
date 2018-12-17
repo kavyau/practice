@@ -20,11 +20,13 @@ public class Detect_Loop
         head=new_node;
     }
 
+    //FLOYD'S CYCLE DETECTION ALGORITHM
     private static boolean ifLoopExists()
     {
         Node ptr1=head;
         Node ptr2=head;
 
+        //fast-ptr and slow-ptr
         while(ptr1!=null && ptr1.next!=null) {
             ptr1 = ptr1.next.next;
             ptr2 = ptr2.next;
@@ -41,7 +43,7 @@ public class Detect_Loop
         Node node=head;
         while(node!=null)
         {
-            System.out.println(node.data+" ");
+            System.out.print(node.data+" ");
             node=node.next;
         }
     }
@@ -57,7 +59,7 @@ public class Detect_Loop
 
         System.out.println("before loop=");
         printList();
-
+        System.out.println();
         System.out.println("loop existed-->"+ ifLoopExists());
     }
 }
